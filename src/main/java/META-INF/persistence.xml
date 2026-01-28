@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+   xmlns="https://jakarta.ee/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+         https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+   <persistence-unit name="SmileEverydayPU" transaction-type="JTA">
+      
+      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+      
+      <jta-data-source>java:/jdbc/rendezvousDS</jta-data-source>
+      
+      <class>tn.enit.entities.Patient</class>
+      <class>tn.enit.entities.Dentiste</class>
+      <class>tn.enit.entities.Rendezvous</class>
+      <class>tn.enit.entities.ServiceMedical</class> 
+      <class>tn.enit.entities.AideSoignant</class>
+      <class>tn.enit.entities.Publication</class>
+      <class>tn.enit.entities.ActeMedical</class>
+
+      <properties>
+         <property name="hibernate.hbm2ddl.auto" value="update"/>
+         <property name="hibernate.show_sql" value="true"/>
+         <property name="hibernate.format_sql" value="true"/>
+         
+         </properties>
+         
+   </persistence-unit>
+</persistence>
